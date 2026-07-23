@@ -283,4 +283,9 @@ class $modify(MyEditorUI, EditorUI) {
         EditorUI::onPause(sender);
         applyButtonVisibility(m_fields->version);
     }
+
+    void updateButtons() {
+        EditorUI::updateButtons();
+        applyButtonVisibility(m_fields->version);
+    }
 };

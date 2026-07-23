@@ -34,5 +34,8 @@ class $modify(MyEditorPauseLayer, EditorPauseLayer) {
         return true;
     }
 
-    
+    void onResume(CCObject* sender) {
+        EditorPauseLayer::onResume(sender);
+        removeIds(m_editorLayer->m_editorUI, { "link-button", "unlink-button", "enable-link-button" });
+    }
 };
