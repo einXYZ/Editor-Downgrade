@@ -288,4 +288,14 @@ class $modify(MyEditorUI, EditorUI) {
         EditorUI::updateButtons();
         applyButtonVisibility(m_fields->version);
     }
+
+    void onPlaytest(CCObject* sender) {
+        EditorUI::onPlaytest(sender);
+        applyButtonVisibility(m_fields->version);
+    }
+
+    void playtestStopped() {
+        EditorUI::playtestStopped();
+        applyButtonVisibility(m_fields->version);
+    }
 };
