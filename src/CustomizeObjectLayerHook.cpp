@@ -18,8 +18,8 @@ class $modify(MyCustomizeObjectLayer, CustomizeObjectLayer) {
 
         if (version <= GDVersion::v1_9) {
             removeIds(this, { "live-color-select-button", "channel-5-button", "channel-6-button", "channel-7-button",
-                        "channel-8-button", "channel-9-button", "channel-custom-button", "base-hsv-button",
-                        "next-free-button", "detail-tab-button", "settings-button" });
+                        "channel-8-button", "channel-9-button", "channel-custom-button", "base-hsv-menu",
+                        "next-free-menu", "tabs-menu", "settings-button", "info-menu", "browse-menu", "copy-paste-menu" });
         }
 
         return true;
