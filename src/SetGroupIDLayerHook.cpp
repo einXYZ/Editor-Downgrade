@@ -22,17 +22,24 @@ class $modify(MySetGroupIDLayer, SetGroupIDLayer) {
                         "channel-menu", "groups-list-menu", "next-free-menu", "add-group-id-buttons-menu",
                         "z-layer-menu", "actions-menu" });
             this->setOpacity(63);
-            auto bg = this->getChildByIDRecursive("background");
-            bg->setContentSize({ 160.0f, 120.0f });
-            auto prev = this->getChildByIDRecursive("editor-layer-prev-button");
-            prev->setRotation(-90.0f);
-            auto next = this->getChildByIDRecursive("editor-layer-next-button");
-            next->setRotation(90.0f);
-            next->setScale(-1.0f, 1.0f);
-            auto menu = this->getChildByIDRecursive("editor-layer-menu");
-            menu->setAnchorPoint({ 1.0f, 1.0f });
-            menu->setPosition(bg->getPosition() + CCPoint(bg->getContentSize().width / 2, bg->getContentSize().height / 2));
-        }
+            if (auto bg = this->getChildByIDRecursive("background")) {
+                bg->setContentSize({160.0f, 120.0f});
+
+                if (auto prev = this->getChildByIDRecursive("editor-layer-prev-button")) {
+                    prev->setRotation(-90.0f);
+                }
+
+                if (auto next = this->getChildByIDRecursive("editor-layer-next-button")) {
+                    next->setRotation(90.0f);
+                    next->setScale(-1.0f, 1.0f);
+                }
+
+                if (auto menu = this->getChildByIDRecursive("editor-layer-menu")) {
+                    menu->setAnchorPoint({0.5f, 0.5f});
+                    menu->setPosition(bg->getPosition());
+                }
+            }
+}
 
         return true;
     }
