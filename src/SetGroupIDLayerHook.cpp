@@ -39,8 +39,7 @@ class $modify(MySetGroupIDLayer, SetGroupIDLayer) {
                     menu->setPosition(bg->getPosition());
                 }
             }
-}
-
+        }
         return true;
     }
 };
